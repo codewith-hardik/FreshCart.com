@@ -62,7 +62,7 @@ p{
     color: var(--text-p-color);
 
 }
-.main-btn{
+.login-btn{
     font-size: 14px;
     line-height: 22.4px;
     font-weight: 600;
@@ -72,16 +72,47 @@ p{
     border-radius: 8px;
     
 }
+.signup-btn{
+    font-size: 14px;
+    line-height: 22.4px;
+    font-weight: 600;
+    letter-spacing: normal;
+    color: var(--white-color) !important;
+    background-color: #067a40f0;
+    border-radius: 8px;
+    
+}
+.signup-btn:hover{
+    background-color: #0a7753;
+    color: var(--white-color) !important;
+}
 
-.main-btn:hover{
+.login-btn:hover{
     background-color: #099309;
     color: var(--white-color) !important;
 }
-.main-btn:focus{
+.login-btn:focus{
     /* border: none !important; */
     background-color: #099309 !important;
     color: var(--white-color) !important;
 }
+
+.purchase-btn{
+    font-size: 14px;
+    line-height: 22.4px;
+    font-weight: 600;
+    letter-spacing: normal;
+    color: var(--white-color) !important;
+    background-color: #099309;
+    border-radius: 8px;
+}
+.purchase-btn:hover{
+    background-color: #099309e4;
+    color: var(--white-color) !important;
+}
+
+
+
 .view-btn{
     font-size: 14px;
     line-height: 22.4px;
@@ -190,4 +221,98 @@ p{
     color: var(--white-color);
 }
 
+/* Login and Signup Modal Styles */
+#loginModal .modal-content,
+#signupModal .modal-content {
+  border-radius: 10px;
+  overflow: hidden;
+}
 
+.login-btn, .signup-btn {
+  background-color: #0aad0a;
+  color: white;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.login-btn:hover, .signup-btn:hover {
+  background-color: #088a08;
+  color: white;
+}
+
+#loginModal a, #signupModal a {
+  color: #0aad0a;
+}
+
+.toggle-password {
+  border-color: #ced4da;
+}
+
+.toggle-password:hover {
+  background-color: #f8f9fa;
+}
+
+.form-control:focus {
+  border-color: #0aad0a;
+  box-shadow: 0 0 0 0.25rem rgba(10, 173, 10, 0.25);
+}
+
+.form-check-input:checked {
+  background-color: #0aad0a;
+  border-color: #0aad0a;
+}
+
+.modal-header {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.modal-header .btn-close:focus {
+  box-shadow: none;
+}
+
+.modal-backdrop.show {
+  opacity: 0.7;
+}
+
+/* Toast notification styles */
+.toast {
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  opacity: 0.95;
+  font-weight: 500;
+}
+
+.toast-body {
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+}
+
+.toast.bg-success {
+  background-color: #0aad0a !important;
+}
+
+.toast .bi-check-circle {
+  font-size: 1.1rem;
+  vertical-align: -2px;
+}
+
+.btn-close-white:focus {
+  box-shadow: none;
+}
+
+
+/* Error toast notification styles */
+.toast.bg-danger {
+  background-color: #dc3545 !important;
+}
+
+.toast .bi-exclamation-circle {
+  font-size: 1.1rem;
+  vertical-align: -2px;
+}
+
+/* Loading spinners */
+.spinner-border-sm {
+  margin-right: 5px;
+}

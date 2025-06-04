@@ -4,17 +4,15 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>FreshCart</title>
-    <link
-      rel="shortcut icon"
-      href="./assets/logo/logo.png"
-      type="image/x-icon"
-    />
+    <link rel="shortcut icon" href="./assets/logo/logo.png" type="image/x-icon" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <!-- Bootstrap Icons CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/responsive.css" />
   </head>
@@ -55,8 +53,11 @@
                 <li class="nav-item mx-2">
                   <a class="nav-link text-hover" href="#">Support</a>
                 </li>
-                <li class="nav-item mx-2 ">
-                    <a class="nav-link btn main-btn  px-3" href="#">Purchase</a>
+                <li class="nav-item mx-2">
+                  <a class="nav-link btn login-btn px-3" href="javascript:void(0);" onclick="console.log('Login button clicked'); login();">Login</a>
+                </li>
+                <li class="nav-item mx-2">
+                  <a class="nav-link btn signup-btn px-3" href="javascript:void(0);" onclick="console.log('Signup button clicked'); signup();">Signup</a>
                 </li>
               </ul>
             </div>
@@ -324,7 +325,7 @@
                     Build fast. Launch faster. with FreshCart Next-js Template
                 </h1>
                 <p>Start working with , the Impressive design, powerful features, and easy customization making website building faster, easier and more professional than ever.</p>
-                <button class="btn main-btn my-4 px-3 py-2">Purchase FreshCart</button>
+                <button class="btn purchase-btn my-4 px-3 py-2">Purchase FreshCart</button>
 
                 <p class="py-3">Copyright 2024 © FreshCart eCommerce NextJs Template. Made with Love from <span class="green-span">Codescandy</span>.</p>
             </div>
@@ -333,12 +334,143 @@
 
 
 
+     <!--! Login Modal -->
+     <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+       <div class="modal-dialog modal-dialog-centered">
+         <div class="modal-content border-0 shadow">
+           <div class="modal-header bg-light border-0">
+             <h5 class="modal-title" id="loginModalLabel">Login to FreshCart</h5>
+             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+           </div>
+           <div class="modal-body p-4">
+             <form id="loginForm">
+               <div class="mb-3">
+                 <label for="loginEmail" class="form-label">Email address</label>
+                 <input type="email" class="form-control" id="loginEmail" placeholder="name@example.com" required>
+               </div>
+               <div class="mb-3">
+                 <label for="loginPassword" class="form-label">Password</label>
+                 <div class="input-group">
+                   <input type="password" class="form-control" id="loginPassword" placeholder="Enter password" required>
+                   <button class="btn btn-outline-secondary toggle-password" type="button">
+                     <i class="bi bi-eye"></i>
+                   </button>
+                 </div>
+               </div>
+               <div class="d-flex justify-content-between align-items-center mb-4">
+                 <div class="form-check">
+                   <input class="form-check-input" type="checkbox" id="rememberMe">
+                   <label class="form-check-label" for="rememberMe">Remember me</label>
+                 </div>
+                 <a href="#" class="text-decoration-none">Forgot password?</a>
+               </div>
+               <button type="submit" class="btn w-100 login-btn">Login</button>
+             </form>
+             <div class="text-center mt-3">
+               <p>Don't have an account? <a href="#" onclick="openSignupModal()" class="text-decoration-none">Sign up</a></p>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+
+     <!-- Signup Modal -->
+     <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+       <div class="modal-dialog modal-dialog-centered">
+         <div class="modal-content border-0 shadow">
+           <div class="modal-header bg-light border-0">
+             <h5 class="modal-title" id="signupModalLabel">Create your account</h5>
+             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+           </div>
+           <div class="modal-body p-4">
+             <form id="signupForm">
+               <div class="row">
+                 <div class="col-md-6 mb-3">
+                   <label for="firstName" class="form-label">First Name</label>
+                   <input type="text" class="form-control" id="firstName" placeholder="John" required>
+                 </div>
+                 <div class="col-md-6 mb-3">
+                   <label for="lastName" class="form-label">Last Name</label>
+                   <input type="text" class="form-control" id="lastName" placeholder="Doe" required>
+                 </div>
+               </div>
+               <div class="mb-3">
+                 <label for="signupEmail" class="form-label">Email address</label>
+                 <input type="email" class="form-control" id="signupEmail" placeholder="name@example.com" required>
+               </div>
+               <div class="mb-3">
+                 <label for="signupPassword" class="form-label">Password</label>
+                 <div class="input-group">
+                   <input type="password" class="form-control" id="signupPassword" placeholder="Create password" required>
+                   <button class="btn btn-outline-secondary toggle-password" type="button">
+                     <i class="bi bi-eye"></i>
+                   </button>
+                 </div>
+                 <div class="form-text">Password must be at least 8 characters</div>
+               </div>
+               <div class="mb-4 form-check">
+                 <input class="form-check-input" type="checkbox" id="agreeTerms" required>
+                 <label class="form-check-label" for="agreeTerms">
+                   I agree to the <a href="#" class="text-decoration-none">Terms of Service</a> and <a href="#" class="text-decoration-none">Privacy Policy</a>
+                 </label>
+               </div>
+               <button type="submit" class="btn w-100 signup-btn">Create Account</button>
+             </form>
+             <div class="text-center mt-3">
+               <p>Already have an account? <a href="#" onclick="openLoginModal()" class="text-decoration-none">Login</a></p>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+
+     <!-- Toast notifications container -->
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+  <!-- Success Toast for Login -->
+  <div id="loginSuccessToast" class="toast align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="d-flex">
+      <div class="toast-body">
+        <i class="bi bi-check-circle me-2"></i>
+        Login successful! Welcome back.
+      </div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+  </div>
   
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
-    <script src="./js/script.js"></script>
+  <!-- Success Toast for Signup -->
+  <div id="signupSuccessToast" class="toast align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="d-flex">
+      <div class="toast-body">
+        <i class="bi bi-check-circle me-2"></i>
+        Account created successfully!
+      </div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+  </div>
+
+  <!-- Success Toast for Logout -->
+  <div id="logoutSuccessToast" class="toast align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="d-flex">
+      <div class="toast-body">
+        <i class="bi bi-check-circle me-2"></i>
+        You've been successfully logged out.
+      </div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+  </div>
+</div>
+
+     <!--! Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+
+<!-- Bootstrap and your custom scripts -->
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+  crossorigin="anonymous"
+></script>
+<script src="./js/firebase-config.js"></script>
+<script src="./js/script.js"></script>
   </body>
 </html>
