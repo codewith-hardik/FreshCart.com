@@ -40,7 +40,7 @@ This template is perfect for building stylish online stores quickly and efficien
 
 ## 🖼️ Screenshots
 
-### 📱 Homepage
+### 📱 Pages
 ![Homepage](screenshots/1.png)
 ![page](screenshots/2.png)
 ![page](screenshots/3.png)
