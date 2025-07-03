@@ -38,14 +38,10 @@ This template is perfect for building stylish online stores quickly and efficien
 
 ---
 
-## 🖥️ Screenshots
+## 🖼️ Screenshots
 
-
-
-Example:
-
-```markdown
-![page](screenshots/1.png)
+### 📱 Homepage
+![Homepage](screenshots/1.png)
 ![page](screenshots/2.png)
 ![page](screenshots/3.png)
 ![page](screenshots/4.png)
@@ -57,3 +53,28 @@ Example:
 ![page](screenshots/m3.png)
 ![page](screenshots/m4.png)
 ![page](screenshots/m5.png)
+
+
+## ⚙️ Installation Instructions
+Follow these steps to set up FreshCart locally:
+
+1️⃣ **Clone the repository**
+```bash
+
+git clone https://github.com/codewith-hardik/FreshCart.com.git
+```
+
+
+
+
+2️⃣ **Navigate into the project directory:**
+
+```bash
+cd FreshCart.com
+```
+3️⃣ **Open index.html in your browser**
+
+Since this is a static template, no build steps are required. You can also use a local server (like Live Server extension in VSCode) to preview.
+
+✅ You’re ready to explore and customize FreshCart!
+
